@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.detailContainer {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.upperContainer {
+  display: flex;
+  padding-top: 20px;
+}
+
+.titleBox {
+  width: 25%;
+  display: flex;
+  height: 260px;
+  align-items: center;
+  border: 1px solid #4d4d4d;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  font-size: 27px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.righSideContainer {
+  width: 30%;
+}
+
+.infoItem {
+  width: 100%;
+  display: flex;
+  font-size: 20px;
+  margin: 13px 5px;
+
+  .infoLabel {
+    width: 30%;
+  }
+}
+
+.containerRating {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: flex;
+  font-size: 20px;
+
+  img {
+    height: 20px;
+    margin-right: 5px;
+  }
+}

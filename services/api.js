@@ -5,5 +5,6 @@ const api = axios.create({
 });
 
 export const getMovies = async () => api.get("/films");
+export const getMovieDetail = async (uuid) => api.get(`/films/${uuid}`);
 
 export default api;
