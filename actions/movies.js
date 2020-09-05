@@ -8,6 +8,10 @@ import {
 
 const baseUrl = "https://ghibliapi.herokuapp.com";
 
+export const getMovieListRequest = () => ({
+  type: GET_MOVIES_REQUEST,
+});
+
 export const getMoviesList = () => {
   return (dispatch) => {
     axios

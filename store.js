@@ -1,8 +1,10 @@
 import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
+// import thunk from "redux-thunk";
+import createSagaMiddleware from "redux-saga";
 import { HYDRATE, createWrapper } from "next-redux-wrapper";
 
 import rootReducer from "./reducers";
+import rootSaga from "./saga";
 
 const bindMiddleware = (middleware) => {
   if (process.env.NODE_ENV !== "production") {
@@ -26,7 +28,14 @@ const reducer = (state, action) => {
 };
 
 export function configureStore(initialStore = {}) {
-  const store = createStore(reducer, initialStore, bindMiddleware([thunk]));
+  const sagaMiddleware = createSagaMiddleware();
+  const store = createStore(
+    reducer,
+    initialStore,
+    bindMiddleware([sagaMiddleware])
+  );
+
+  store.sagaTask = sagaMiddleware.run(rootSaga);
 
   return store;
 }

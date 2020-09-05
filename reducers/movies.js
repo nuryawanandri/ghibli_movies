@@ -14,10 +14,8 @@ export const moviesReducers = (state = initialState, action) => {
   switch (action.type) {
     case HYDRATE:
       // Attention! This will overwrite client state! Real apps should use proper reconciliation.
-      console.log("actions : ", action.payload);
       return { ...state, ...action.payload };
     case GET_MOVIES_REQUEST:
-      console.log("action : ", action);
       return {
         ...state,
         isLoading: true,

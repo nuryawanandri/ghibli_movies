@@ -1,41 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
-import axios from "axios";
-import { Provider, useSelector } from "react-redux";
+import { getMovies } from "../services/api";
 
 import { wrapper } from "../store";
 
-import { getMoviesList, testActionCreator } from "../actions/movies";
+import { testActionCreator, getMovieListRequest } from "../actions/movies";
 
-// export const getStaticProps = async (context) => {
-//   const movieList = await axios.get("https://ghibliapi.herokuapp.com/films");
-
-//   console.log("movieList : ", context);
-
-//   return {
-//     props: {
-//       films: movieList.data,
-//     },
-//   };
-// };
-
-export const getStaticProps = wrapper.getStaticProps(
-  async ({ store, preview }) => {
-    await store.dispatch(getMoviesList());
-    console.log("preview : ", preview);
-    const movieList = await axios.get("https://ghibliapi.herokuapp.com/films");
-    store.dispatch({
-      type: "movies/GET_MOVIES_REQUEST",
-      payload: movieList.data,
-    });
-    store.dispatch({ type: "movies/GET_MOVIES_REQUEST" });
-  }
-);
+export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
+  const movieList = await getMovies();
+  store.dispatch({
+    type: "movies/GET_MOVIES_SUCCESS",
+    payload: movieList.data,
+  });
+});
 
 const Movies = (props) => {
-  const { movies } = useSelector((state) => state);
-  console.log("prosp : ", movies);
-  return <button onClick={props.getMoviesList}>Test</button>;
+  return <button onClick={props.getMovieListRequest}>Test</button>;
 };
 
 const mapStateToProps = (state) => {
@@ -49,8 +29,8 @@ const mapDispatchToProps = (dispatch) => {
     testActionCreator: () => {
       dispatch(testActionCreator());
     },
-    getMoviesList() {
-      dispatch(getMoviesList());
+    getMovieListRequest() {
+      dispatch(getMovieListRequest());
     },
   };
 };
