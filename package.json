@@ -8,11 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "axios": "^0.20.0",
     "express": "^4.17.1",
     "next": "9.5.3",
     "next-redux-saga": "^4.1.2",
     "next-redux-wrapper": "^6.0.2",
+    "node-sass": "^4.14.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-redux": "^7.2.1",

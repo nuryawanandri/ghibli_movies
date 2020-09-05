@@ -6,6 +6,8 @@ import { wrapper } from "../store";
 
 import { testActionCreator, getMovieListRequest } from "../actions/movies";
 
+import ButtonTest from "../components/ButtonTest";
+
 export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
   const movieList = await getMovies();
   store.dispatch({
@@ -15,7 +17,7 @@ export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
 });
 
 const Movies = (props) => {
-  return <button onClick={props.getMovieListRequest}>Test</button>;
+  return <ButtonTest onClick={props.getMovieListRequest} />;
 };
 
 const mapStateToProps = (state) => {
