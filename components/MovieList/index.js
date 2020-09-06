@@ -7,9 +7,6 @@ import Styles from "./index.scss";
 const MovieList = (props) => {
   return (
     <div>
-      <div className={Styles.movieListTitle}>
-        <span>Movie List</span>
-      </div>
       <div className={Styles.movieListContainer}>
         {props.movies.films.map((film) => (
           <div className={Styles.movieBox} key={film.id}>

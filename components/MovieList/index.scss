@@ -2,6 +2,9 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin: 30px 10%;
+  border-top: 1px solid #bdbdbd;
+  padding-top: 30px;
 }
 
 .movieBox {
@@ -10,6 +13,7 @@
   border-radius: 3px;
   position: relative;
   margin-bottom: 40px;
+  background-color: #ffffff;
 
   a {
     color: #000000;
@@ -35,13 +39,15 @@
 }
 
 .movieTitleContainer {
-  width: 100%;
-  font-size: 26px;
+  width: 90%;
+  font-size: 20px;
   height: 240px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  padding: 0 10px;
+  text-align: center;
 }
 
 .descriptionBox {
