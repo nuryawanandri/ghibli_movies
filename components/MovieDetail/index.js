@@ -35,7 +35,7 @@ const MovieDetail = (props) => {
             </div>
           </div>
         </div>
-        <div>{filmDetail.description}</div>
+        <div className={Styles.description}>{filmDetail.description}</div>
       </div>
     </div>
   );
