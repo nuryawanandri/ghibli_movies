@@ -1,3 +1,6 @@
+$small: 640px;
+$medium: 1080px;
+
 .movieListContainer {
   display: flex;
   justify-content: space-around;
@@ -10,7 +13,7 @@
 .movieBox {
   width: 21%;
   border: 1px solid #b1b1b1;
-  border-radius: 3px;
+  border-radius: 10px;
   position: relative;
   margin-bottom: 40px;
   background-color: #ffffff;
@@ -28,6 +31,14 @@
       visibility: visible;
       transition: height 0.3s;
     }
+  }
+
+  @media screen and (max-width: $medium) {
+    width: 30%;
+  }
+
+  @media screen and (max-width: $small) {
+    width: 47%;
   }
 }
 

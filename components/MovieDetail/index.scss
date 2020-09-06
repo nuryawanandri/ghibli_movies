@@ -1,3 +1,5 @@
+$small: 700px;
+
 .container {
   display: flex;
   justify-content: center;
@@ -12,10 +14,14 @@
 .upperContainer {
   display: flex;
   padding-top: 20px;
+
+  @media screen and (max-width: $small) {
+    flex-direction: column;
+  }
 }
 
 .titleBox {
-  width: 17%;
+  width: 260px;
   display: flex;
   height: 260px;
   align-items: center;
@@ -31,7 +37,11 @@
 }
 
 .righSideContainer {
-  width: 30%;
+  width: calc(100% - 260px);
+
+  @media screen and (max-width: $small) {
+    width: 100%;
+  }
 }
 
 .infoItem {
@@ -41,7 +51,7 @@
   margin: 13px 5px;
 
   .infoLabel {
-    width: 30%;
+    width: 122px;
   }
 }
 
